@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #00acd7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border: 1px solid black;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--primary-color);
+}
+
+h1 {
+  width: fit-content;
+  margin: 1rem auto;
+  font-size: 5rem;
+  font-weight: 100;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2rem;
+
+  text-decoration-color: var(--primary-color);
+  color: var(--primary-color);
+}
+p {
+  background-color: aliceblue;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  word-wrap: break-word;
+  animation: faidin 0.9s ease-in-out 0.5;
+  min-height: 20vh;
+  height: auto;
+  writing-mode: horizontal-tb;
+}
+
+@keyframes faidin {
+  0% {
+    opacity: 0;
+    color: var(--primary-color);
+  }
+
+  50% {
+    opacity: 0.5;
+    color: rgb(151, 51, 51);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2.5rem;
+    text-underline-offset: 1rem;
+  }
+}
+
+@media (max-width: 200px) {
+  h1 {
+    font-size: 1rem;
+    text-underline-offset: 0;
+  }
+}
+
+section div span::after {
+  display: block;
+  content: '';
+  border-bottom: solid 3px #019fb6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+section div span:hover::after {
+  transform: scaleX(1);
+}
+
+.box::after {
+  height: 10vh;
+  /* display: block;
+  content: '';
+  margin-top: 1rem;
+  border-bottom: 1px solid black;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out; */
+  margin-top: 3rem;
+  display: block;
+  content: '';
+  border-bottom: solid 3px #019fb6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.box:hover::after {
+  transform: scaleX(1);
+}
