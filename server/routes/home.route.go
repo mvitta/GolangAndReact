@@ -8,13 +8,6 @@ import (
 	"server/utils"
 )
 
-func SetHeader(w http.ResponseWriter, f func(w http.ResponseWriter)) {
-	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
-	w.Header().Set("Content-Type", "application/json")
-	f(w)
-
-}
-
 func Home(w http.ResponseWriter, r *http.Request) {
 
 	if utils.ValidOrigin("Origin", r.Header) {
@@ -25,7 +18,8 @@ func Home(w http.ResponseWriter, r *http.Request) {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
-			SetHeader(w, func(w http.ResponseWriter) {
+
+			utils.SetHeader(w, func(w http.ResponseWriter) {
 				w.WriteHeader(http.StatusOK)
 				w.Write(datajson)
 			})
