@@ -19,8 +19,7 @@ func main() {
 	http.HandleFunc("/", routes.Home)
 
 	errorListenAndServer := http.ListenAndServe(":8080", nil)
-	if errorListenAndServer == nil {
-	} else {
+	if errorListenAndServer != nil {
 		log.Println(errorListenAndServer.Error())
 	}
 }

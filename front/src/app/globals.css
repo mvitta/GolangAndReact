@@ -31,7 +31,7 @@ h1 {
   text-decoration-color: var(--primary-color);
   color: var(--primary-color);
 }
-p {
+.paragraph {
   background-color: aliceblue;
   color: black;
   border: 1px solid black;
@@ -105,4 +105,11 @@ section div span:hover::after {
 
 .box:hover::after {
   transform: scaleX(1);
+}
+
+.p-style {
+  color: rgb(96, 96, 96);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }

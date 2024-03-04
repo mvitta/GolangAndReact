@@ -19,7 +19,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 
-			utils.SetHeader(w, func(w http.ResponseWriter) {
+			utils.DefaultHeader(w, func(w http.ResponseWriter) {
 				w.WriteHeader(http.StatusOK)
 				w.Write(datajson)
 			})

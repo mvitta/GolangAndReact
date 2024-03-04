@@ -3,19 +3,20 @@
 import Image from 'next/image'
 import useGetInfo from '@/hooks/useGetInfo'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   const [paragraph] = useGetInfo()
 
   return (
-    <main className=''>
+    <>
       <Header />
-      <h1>Application</h1>
-      <hr />
-      <p>{paragraph}</p>
-      <hr />
-      <div className='box'></div>
-      <hr />
-    </main>
+      <main className='min-h-screen'>
+        <h1>Application</h1>
+        <p className='paragraph'>{paragraph}</p>
+      </main>
+      <Footer />
+    </>
   )
 }
+//

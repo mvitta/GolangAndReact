@@ -20,7 +20,7 @@ func ValidOrigin(key string, h http.Header) bool {
 	return h.Get(key) != ""
 }
 
-func SetHeader(w http.ResponseWriter, f func(w http.ResponseWriter)) {
+func DefaultHeader(w http.ResponseWriter, f func(w http.ResponseWriter)) {
 	w.Header().Set("Access-Control-Allow-Origin", os.Getenv("URL"))
 	w.Header().Set("Content-Type", "application/json")
 	f(w)
