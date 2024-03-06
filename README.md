@@ -6,7 +6,7 @@
 
 ## Golang y ReactJS
 
-Este es un proyecto netamente académico, donde se podrán ver algunos ejemplos básicos para la creación de una Frontend en React utilizando Next JS y Golang  del lado del servidor,, las Webs utilizadas como apoyo para la realización de este proyecto son la siguiente:
+Este es un proyecto netamente académico, donde se podrán ver algunos ejemplos básicos para la creación de una Frontend en React utilizando Next JS y Golang del lado del servidor, las Webs utilizadas como apoyo para la realización de este proyecto son la siguiente:
 
 - [ReactDev](https://react.dev/learn)
 - [NextJS](https://nextjs.org/docs)
@@ -14,4 +14,4 @@ Este es un proyecto netamente académico, donde se podrán ver algunos ejemplos 
 - [Standard Library](https://pkg.go.dev/std)
 - [React-svgr](https://react-svgr.com/playground/)
 
-Con el tiempo se seguirá agregando mas contenido y funcionalidad, el objetivo es abordar temas básicos que un Frontend o Backend debe conocer, por ejemplo, Contextos, Base de datos, Autenticación, Paginación, Consumo de alguna API etc.
+Con el tiempo se seguirá agregando mas contenido y funcionalidad, el objetivo es abordar temas básicos que un Frontend o Backend debe conocer, por ejemplo, **Contextos, Base de datos, Autenticación, Paginación, Consumo de alguna API, Testing etc**.
