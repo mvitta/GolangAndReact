@@ -1,7 +1,7 @@
 <p align="center"><a href="https://go.dev/" target="_blank"><img src="https://www.svgrepo.com/show/353795/go.svg" width="100" alt="Logo GO"></a>  <a href="https://react.dev/" target="_blank"><img src="https://www.svgrepo.com/show/355190/reactjs.svg" width="100" alt="Logo ReactJS"></a></p>
 
 <p align="center">
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
 ## Golang y ReactJS
