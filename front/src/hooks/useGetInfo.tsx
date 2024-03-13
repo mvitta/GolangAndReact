@@ -4,7 +4,7 @@ interface ResponseApiGolang {
   response: string
 }
 
-export default function useGetInfo() {
+export default async function useGetInfo(): Promise<string[]> {
   const [state, setState] = useState('')
 
   useEffect(() => {
@@ -16,7 +16,9 @@ export default function useGetInfo() {
         }
         return response.json()
       })
-      .then((data: ResponseApiGolang) => setState(data.response))
+      .then((data: ResponseApiGolang) => {
+        setState(data.response)
+      })
       .catch((error) => console.log(error))
   }, [])
 

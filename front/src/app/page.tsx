@@ -1,21 +1,16 @@
 'use client'
 
-import Image from 'next/image'
-import useGetInfo from '@/hooks/useGetInfo'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import dynamic from 'next/dynamic'
 
-export default function Home() {
-  const [paragraph] = useGetInfo()
+const ParagraphNoSSR = dynamic(() => import('@/components/Paragraph'), {
+  ssr: false,
+})
 
+export default function Page() {
   return (
     <>
-      <Header />
-      <main className='min-h-screen'>
-        <h1>Application</h1>
-        <p className='paragraph'>{paragraph}</p>
-      </main>
-      <Footer />
+      <h1>Application</h1>
+      <ParagraphNoSSR />
     </>
   )
 }

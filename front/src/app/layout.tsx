@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Coming_Soon } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Menu from '@/components/Menu'
 
 const inter = Coming_Soon({
   weight: '400',
@@ -19,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}`}>
+        <Header />
+        <Menu />
+        <main className='min-h-screen'>{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }

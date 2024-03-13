@@ -17,6 +17,7 @@ func main() {
 	}
 
 	http.HandleFunc("/", routes.Home)
+	http.HandleFunc("/images", routes.Images)
 
 	errorListenAndServer := http.ListenAndServe(":8080", nil)
 	if errorListenAndServer != nil {

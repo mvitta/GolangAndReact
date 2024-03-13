@@ -12,9 +12,14 @@
   padding: 0;
 }
 
+body {
+  min-width: 300px;
+  width: 100%;
+}
+
 hr {
-  border: 1px solid black;
   height: 1px;
+  border: 1px solid black;
   border: 0;
   border-top: 1px solid var(--primary-color);
 }
@@ -31,7 +36,7 @@ h1 {
   text-decoration-color: var(--primary-color);
   color: var(--primary-color);
 }
-.paragraph {
+.parag {
   background-color: aliceblue;
   color: black;
   border: 1px solid black;
@@ -89,12 +94,6 @@ section div span:hover::after {
 
 .box::after {
   height: 10vh;
-  /* display: block;
-  content: '';
-  margin-top: 1rem;
-  border-bottom: 1px solid black;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out; */
   margin-top: 3rem;
   display: block;
   content: '';
