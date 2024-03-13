@@ -3,8 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-
-	// "github.com/rs/cors"
 	"server/routes"
 
 	"github.com/joho/godotenv"
