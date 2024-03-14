@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-interface ResponseApiGolang {
+export interface ResponseApiGolang {
   response: string
 }
 

@@ -2,7 +2,6 @@ package routes
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"server/utils"
 )
@@ -14,7 +13,7 @@ type Response struct {
 var Paragraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci assumenda qui dicta, nesciunt deserunt quia numquam eum unde porro quis quidem eius iste mollitia illo facilis modi, incidunt a minima."
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.Header)
+
 	if utils.ValidOrigin("Origin", r.Header) {
 		if r.Method == http.MethodGet {
 			mss := Response{Response: Paragraph}

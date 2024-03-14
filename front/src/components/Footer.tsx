@@ -29,6 +29,7 @@ export default function Footer() {
               const { ComponentIcon, url } = Icon
               return (
                 <a
+                  className='hover:scale-150 transition ease-out'
                   href={url}
                   key={crypto.randomUUID()}
                   target='_blank'

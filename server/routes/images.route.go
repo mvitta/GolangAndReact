@@ -7,6 +7,7 @@ import (
 )
 
 func Images(w http.ResponseWriter, r *http.Request) {
+
 	if utils.ValidOrigin("Origin", r.Header) {
 		if r.Method == http.MethodGet {
 			images := utils.GetImages()

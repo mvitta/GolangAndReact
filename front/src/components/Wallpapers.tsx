@@ -1,23 +1,45 @@
-import useGetImages, { Result } from '@/hooks/useGetImages'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import Img from './Img'
+import response from '@/data/data.json'
+import styles from '@/components/Wallpapers.module.css'
 
-export default function Images() {
-  const [images, setImages] = useState<Result[]>()
-  const Promise = useGetImages()
+export default async function Wallpapers() {
+  // const response = await fetch('http://localhost:8080/images', {
+  //   cache: 'no-store',
+  //   headers: {
+  //     Origin: 'http://localhost:3000',
+  //   },
+  // })
 
-  useEffect(() => {
-    Promise.then((res) => {
-      setImages(res?.results)
-    })
-  }, [Promise])
+  // const images: ResponseAPIImages = await response.json()
+
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000)
+  })
 
   return (
-    <div className='flex gap-2 flex-wrap mx-auto my-4 justify-center'>
-      {images?.map((img) => {
-        const { by, image, id, source } = img
-        return <Image alt={by} src={image} key={id} width={200} height={200} />
-      })}
-    </div>
+    <>
+      <div className={`${styles.containerGrid} mx-auto my-4`}>
+        {response.results.map((img) => {
+          const { by, image, id, source, diffrentSizes } = img
+          return (
+            <article key={id} className='h-auto'>
+              <Img alt={by} src={image} />
+              <a href={image} target='_blank' rel='noopener noreferrer'>
+                Imagen Original
+              </a>
+              <details open>
+                <summary>Descripcion de la Imagen </summary>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Molestias facilis, nam repellendus beatae sapiente impedit
+                  debitis tempora, ut ipsam dolorum esse molestiae mollitia
+                  expedita quam veniam ad dicta id. Non!
+                </p>
+              </details>
+            </article>
+          )
+        })}
+      </div>
+    </>
   )
 }
