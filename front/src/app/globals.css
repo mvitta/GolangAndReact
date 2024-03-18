@@ -28,14 +28,19 @@ hr {
 h1 {
   width: fit-content;
   margin: 1rem auto;
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 100;
   text-align: center;
   text-decoration: underline;
-  text-underline-offset: 2rem;
-
+  text-underline-offset: 8px;
   text-decoration-color: var(--primary-color);
   color: var(--primary-color);
+}
+
+h2 {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .parag {
   background-color: aliceblue;
@@ -43,9 +48,9 @@ h1 {
   border: 1px solid black;
   border-radius: 10px;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
   word-wrap: break-word;
-  animation: faidin 0.9s ease-in-out 0.5;
+  /* animation: faidin 0.9s ease-in-out 0.5; */
   min-height: 20vh;
   height: auto;
   writing-mode: horizontal-tb;

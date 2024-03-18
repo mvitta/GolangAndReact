@@ -10,7 +10,11 @@ func Images(w http.ResponseWriter, r *http.Request) {
 
 	if utils.ValidOrigin("Origin", r.Header) {
 		if r.Method == http.MethodGet {
-			images := utils.GetImages()
+			images, errGetImages := utils.GetImages()
+			if errGetImages != nil {
+				http.Error(w, errGetImages.Error(), http.StatusInternalServerError)
+				return
+			}
 
 			utils.DefaultHeader(w, func(w http.ResponseWriter) {
 				w.WriteHeader(http.StatusOK)

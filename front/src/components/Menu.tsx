@@ -2,32 +2,45 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import IconHome from '@/icons/menu/Home'
+import IconWallpapers from '@/icons/menu/Wallpapers'
 
 export default function Menu() {
   const pathname = usePathname()
+  const menuOptions = [
+    {
+      href: '/',
+      text: 'Inicio',
+      icon: IconHome,
+    },
+    {
+      href: '/wallpapers',
+      text: 'Wallpapers',
+      icon: IconWallpapers,
+    },
+  ]
 
   return (
     <section>
       <nav className='border-b font-bold text-slate-500 text-lg'>
         <ul className='flex justify-center gap-4 my-4'>
-          <li>
-            <Link
-              href='/'
-              className={pathname === '/' ? 'text-app-color underline' : ''}
-            >
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link
-              href='/wallpapers'
-              className={
-                pathname === '/wallpapers' ? 'text-app-color underline' : ''
-              }
-            >
-              Imagenes
-            </Link>
-          </li>
+          {menuOptions.map((item, index) => {
+            const { icon, href, text } = item
+            const Icon = icon
+            return (
+              <li key={index}>
+                <Link
+                  href={href}
+                  className={`${
+                    pathname === href ? 'text-app-color underline' : ''
+                  }`}
+                >
+                  <Icon />
+                  <div>{text}</div>
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </section>

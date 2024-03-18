@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Coming_Soon } from 'next/font/google'
+import { Coming_Soon, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Menu from '@/components/Menu'
 
-const inter = Coming_Soon({
+const inter = Inter({
   weight: '400',
   subsets: ['latin'],
 })
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <Header />
         <Menu />
-        <main className='min-h-screen'>{children}</main>
+        <main className='min-h-screen w-11/12 mx-auto my-8'>{children}</main>
         <Footer />
       </body>
     </html>

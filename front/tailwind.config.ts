@@ -16,6 +16,9 @@ const config: Config = {
       colors: {
         'app-color': '#00acd7',
       },
+      listStyleImage: {
+        mark: 'url("/icons/check.png")',
+      },
     },
   },
   plugins: [],

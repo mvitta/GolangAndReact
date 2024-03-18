@@ -1,5 +1,4 @@
 import { type ResponseApiGolang } from '@/hooks/useGetInfo'
-import { Suspense } from 'react'
 
 export default async function Paragraph() {
   const API_URL = new URL('http://localhost:8080')
@@ -10,7 +9,7 @@ export default async function Paragraph() {
     },
   })
   const p: ResponseApiGolang = await res.json()
-  await new Promise((resolve) => setTimeout(resolve, 4000))
+  await new Promise((resolve) => setTimeout(resolve, 5000))
 
-  return <p className='parag'>{p.response}</p>
+  return <p>{p.response}</p>
 }

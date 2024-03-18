@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 )
@@ -22,40 +23,42 @@ func ValidOrigin(key string, h http.Header) bool {
 }
 
 func GetRequestToImages(urlForRequest string) (*http.Request, error) {
-	request, errCreateRequest := http.NewRequest("GET", urlForRequest, nil)
+	request, errRequest := http.NewRequest("GET", urlForRequest, nil)
+	if errRequest != nil {
+		log.Println("Error to create request")
+		return nil, errRequest
 
-	if errCreateRequest != nil {
-		fmt.Println("Fails to create request", errCreateRequest)
-		return nil, errCreateRequest
 	}
-
 	request.Header.Add("X-RapidAPI-Key", os.Getenv("API_KEY"))
 	request.Header.Add("X-RapidAPI-Host", os.Getenv("API_HOST"))
 	return request, nil
 }
 
-func GetImages() []byte {
+func GetImages() ([]byte, error) {
 	var data []byte
-
-	r, err := GetRequestToImages(os.Getenv("URL_TO_IMAGES"))
+	req, err := GetRequestToImages(os.Getenv("URL_TO_IMAGES"))
+	//error si falla al momento de crear la peticion
 	if err != nil {
-		return data
+		return nil, err
 	}
-
-	response, errRequest := http.DefaultClient.Do(r)
+	response, errRequest := http.DefaultClient.Do(req)
+	// error si la peticion no se hace de forma correcta
 	if errRequest != nil {
-		fmt.Println(errRequest)
-		return data
+		log.Println(errRequest)
+		return nil, errRequest
 	}
 	defer response.Body.Close()
-
+	// si la api response con un status 200
 	if response.StatusCode == 200 {
-		images, errToGetImages := io.ReadAll(response.Body)
-		if errToGetImages == nil {
+		images, errBody := io.ReadAll(response.Body)
+		// error si tiene problema para leer el Body de la peticion
+		if errBody != nil {
+			log.Println(errBody)
+		} else {
 			data = images
 		}
 	}
-	return data
+	return data, nil
 }
 
 func DefaultHeader(w http.ResponseWriter, f func(w http.ResponseWriter)) {
