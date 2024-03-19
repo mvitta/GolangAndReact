@@ -2,9 +2,9 @@ import { socialMedia } from '@/icons/socialMedia'
 
 export default function Footer() {
   return (
-    <footer className='w-full h-auto border-t border-double bg-slate-300 border-t-app-color border'>
+    <footer className='w-full h-auto border-t border-double bg-slate-300 border-t-app-color border text-gray-600'>
       <section className='w-11/12 flex flex-col my-0 mx-auto'>
-        <section className='flex flex-row my-4'>
+        <section className='flex flex-col sm:flex-row my-4'>
           <div className='p-2'>
             <p className='break-words'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

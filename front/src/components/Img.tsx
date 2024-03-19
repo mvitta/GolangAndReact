@@ -12,6 +12,7 @@ export default function Img({ alt, src }: PropsImage) {
   return (
     <div className={styles.containerImage}>
       <Image
+        className='opacity-65 hover:opacity-100'
         priority
         sizes='200px'
         src={src}

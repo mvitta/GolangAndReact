@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import IconHome from '@/icons/menu/Home'
 import IconWallpapers from '@/icons/menu/Wallpapers'
+import styles from '@/components/Menu.module.css'
 
 export default function Menu() {
   const pathname = usePathname()
@@ -23,12 +24,12 @@ export default function Menu() {
   return (
     <section>
       <nav className='border-b font-bold text-slate-500 text-lg'>
-        <ul className='flex justify-center gap-4 my-4'>
+        <ul className='flex justify-center gap-4 my-1'>
           {menuOptions.map((item, index) => {
             const { icon, href, text } = item
             const Icon = icon
             return (
-              <li key={index}>
+              <li key={index} className={styles.menuItem}>
                 <Link
                   href={href}
                   className={`${
