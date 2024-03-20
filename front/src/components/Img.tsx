@@ -21,6 +21,7 @@ export default function Img({ alt, src }: PropsImage) {
           e.currentTarget.naturalWidth
         }}
         fill
+        style={{ maskImage: 'linear-gradient(black 90%, transparent 100%)' }}
       />
     </div>
   )

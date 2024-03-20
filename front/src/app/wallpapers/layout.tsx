@@ -28,6 +28,7 @@ export default function WallpapersLayout({
             href='https://rapidapi.com/ruamazi/api/free-images-api/details'
             target='_blank'
             rel='noopener noreferrer'
+            title='ir a rapidapi'
           >
             https://rapidapi.com/ruamazi/api/free-images-api/details
           </a>

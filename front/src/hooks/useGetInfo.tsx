@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 export interface ResponseApiGolang {
-  response: string
+  paragraph: string
 }
 
 export default async function useGetInfo(): Promise<string[]> {
@@ -17,7 +17,7 @@ export default async function useGetInfo(): Promise<string[]> {
         return response.json()
       })
       .then((data: ResponseApiGolang) => {
-        setState(data.response)
+        setState(data.paragraph)
       })
       .catch((error) => console.log(error))
   }, [])

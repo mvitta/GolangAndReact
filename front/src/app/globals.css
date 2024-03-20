@@ -25,19 +25,6 @@ hr {
   margin: 1rem 0;
 }
 
-h1 {
-  text-wrap: balance;
-  width: fit-content;
-  margin: 1rem auto;
-  font-size: 2rem;
-  font-weight: 100;
-  text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
 h2 {
   text-wrap: balance;
   color: var(--primary-color);
