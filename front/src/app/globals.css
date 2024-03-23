@@ -13,36 +13,24 @@
 }
 
 hr {
-  border: 1px solid black;
   height: 1px;
+  border: 1px solid black;
   border: 0;
   border-top: 1px solid var(--primary-color);
+  margin: 1rem 0;
 }
 
-h1 {
-  width: fit-content;
-  margin: 1rem auto;
-  font-size: 5rem;
-  font-weight: 100;
-  text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 2rem;
-
-  text-decoration-color: var(--primary-color);
+h2 {
+  text-wrap: balance;
   color: var(--primary-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.paragraph {
-  background-color: aliceblue;
-  color: black;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 1rem;
+
+p {
+  line-height: 1.5;
+  text-wrap: pretty;
   word-wrap: break-word;
-  animation: faidin 0.9s ease-in-out 0.5;
-  min-height: 20vh;
-  height: auto;
-  writing-mode: horizontal-tb;
 }
 
 @keyframes faidin {
@@ -61,20 +49,6 @@ h1 {
   }
 }
 
-@media (max-width: 400px) {
-  h1 {
-    font-size: 2.5rem;
-    text-underline-offset: 1rem;
-  }
-}
-
-@media (max-width: 200px) {
-  h1 {
-    font-size: 1rem;
-    text-underline-offset: 0;
-  }
-}
-
 section div span::after {
   display: block;
   content: '';
@@ -89,12 +63,6 @@ section div span:hover::after {
 
 .box::after {
   height: 10vh;
-  /* display: block;
-  content: '';
-  margin-top: 1rem;
-  border-bottom: 1px solid black;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out; */
   margin-top: 3rem;
   display: block;
   content: '';
@@ -110,6 +78,4 @@ section div span:hover::after {
 .p-style {
   color: rgb(96, 96, 96);
   font-weight: 900;
-  text-decoration: underline;
-  text-underline-offset: 6px;
 }

@@ -12,9 +12,14 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-whiteGray':
+          'background: linear-gradient(90deg, rgba(223,223,223,1) 15%, rgba(255,255,255,1) 45%, rgba(233,233,233,1) 78%);',
       },
       colors: {
         'app-color': '#00acd7',
+      },
+      listStyleImage: {
+        mark: 'url("/icons/check.png")',
       },
     },
   },

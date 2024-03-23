@@ -5,7 +5,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   h: number
 }
 
-const SvgComponent = ({ w, h, ...props }: Props) => (
+const IconGo = ({ w, h, ...props }: Props) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width={w}
@@ -20,4 +20,4 @@ const SvgComponent = ({ w, h, ...props }: Props) => (
     />
   </svg>
 )
-export default SvgComponent
+export default IconGo

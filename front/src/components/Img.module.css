@@ -1,0 +1,7 @@
+.containerImage {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 0 0.2rem #00acd7);
+  border-radius: 8px;
+  margin: 1rem auto;
+}

@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import { Coming_Soon } from 'next/font/google'
+import { inter } from '@/fonts/fonts'
 import './globals.css'
-
-const inter = Coming_Soon({
-  weight: '400',
-  subsets: ['latin'],
-})
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Menu from '@/components/Menu'
 
 export const metadata: Metadata = {
   title: 'Application',
@@ -19,7 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} antialiased min-w-[300px] w-full`}>
+        <section className='border-none fixed top-0 overflow-hidden w-full h-auto z-20'>
+          <Header />
+          <Menu />
+        </section>
+        <main className='mt-[127px] sm:mt-[110px] min-h-screen w-full mx-auto'>
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   )
 }
