@@ -17,10 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} antialiased`}>
-        <Header />
-        <Menu />
-        <main className='min-h-screen w-full mx-auto'>{children}</main>
+      <body className={`${inter.className} antialiased min-w-[300px] w-full`}>
+        <section className='border-none fixed top-0 overflow-hidden w-full h-auto z-20'>
+          <Header />
+          <Menu />
+        </section>
+        <main className='mt-[127px] sm:mt-[110px] min-h-screen w-full mx-auto'>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

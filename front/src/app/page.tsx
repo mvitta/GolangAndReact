@@ -4,13 +4,14 @@ import { IconReactJS } from '@/icons/IconReactJS'
 import { IconTailwind } from '@/icons/IconTailwind'
 import IconGo from '@/icons/IconGo'
 import { Suspense } from 'react'
+import MainTitle from '@/components/MainTitle'
 
 export default async function Page() {
   await new Promise((resolve) => setTimeout(resolve, 1000))
   return (
     <>
       <section className='min-h-screen h-auto relative p-2 text-black'>
-        <div className='absolute right-0 top-0 z-[-1]'>
+        <div className='absolute right-0 top-0 z-[-1] opacity-20'>
           <svg
             width='auto'
             height='556'
@@ -156,7 +157,7 @@ export default async function Page() {
             </defs>
           </svg>
         </div>
-        <div className='absolute bottom-0 left-0 z-[-1]'>
+        <div className='absolute bottom-0 left-0 z-[-1] opacity-20'>
           <svg
             width='auto'
             height='201'
@@ -268,10 +269,8 @@ export default async function Page() {
             </defs>
           </svg>
         </div>
-        <div className='mx-6'>
-          <h1 className='text-center text-slate-700 text-5xl text-balance font-bold mb-8 mt-5'>
-            Application Con ReactJS, NextJS y Golang + Tailwindcss y CSS Basico
-          </h1>
+        <div className='mx-6 md:mx-28 lg:mx-48 2xl:mx-64 '>
+          <MainTitle />
           <Suspense fallback={'cargando parrafo'}>
             <Paragraph />
           </Suspense>
@@ -303,8 +302,11 @@ export default async function Page() {
         </div>
       </section>
       <br />
-      <section className='columns-1 gap-4 sm:columns-2 mx-6 mb-5'>
-        <div>
+      <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mx-12 md:mx-24 mb-20 gap-x-8 gap-y-14'>
+        <div className='shadow-md hover:shadow-2xl p-2 transition-shadow ease-out delay-200'>
+          <div className='flex mb-10 items-center justify-start'>
+            <IconReactJS />
+          </div>
           <h2>React JS</h2>
           <br />
           <p>
@@ -327,8 +329,11 @@ export default async function Page() {
             web.
           </p>
         </div>
-        <hr />
-        <div>
+
+        <div className='shadow-md p-2'>
+          <div className='flex mb-10 items-center justify-start'>
+            <IconNextJS />
+          </div>
           <h2>NextJS</h2>
           <br />
           <p>
@@ -341,8 +346,11 @@ export default async function Page() {
             muchas grandes empresas.2​
           </p>
         </div>
-        <hr />
-        <div>
+
+        <div className='shadow-md p-2'>
+          <div className='flex mb-10 items-center justify-start'>
+            <IconGo w={80} h={80} />
+          </div>
           <h2>Golang</h2>
           <br />
           <p>
@@ -371,6 +379,21 @@ export default async function Page() {
             <li>Simultaneidad integrada y una biblioteca estándar sólida</li>
             <li>Gran ecosistema de socios, comunidades y herramientas</li>
           </ul>
+        </div>
+        <div className='shadow-md p-2'>
+          <div className='flex mb-10 items-center justify-start'>
+            <IconTailwind />
+          </div>
+          <h2>Tailwind</h2>
+          <br />
+          <p>
+            Tailwind CSS es un framework de CSS de código abierto2​ para el
+            diseño de páginas web. La principal característica de esta
+            biblioteca es que, a diferencia de otras como Bootstrap, no genera
+            una serie de clases predefinidas para elementos como botones o
+            tablas. En su lugar, crea una lista de clases CSS que se pueden usar
+            para dar estilos individuales a cada elemento.3​
+          </p>
         </div>
       </section>
     </>

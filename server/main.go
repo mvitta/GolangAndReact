@@ -1,7 +1,8 @@
 package main
 
 import (
-	"log"
+	"fmt"
+	"log/slog"
 	"net/http"
 	"server/routes"
 
@@ -11,7 +12,7 @@ import (
 func main() {
 
 	if err := godotenv.Load(); err != nil {
-		log.Println("Error Env:", err.Error())
+		slog.Warn(fmt.Sprintf("Error Env: %v", err.Error()))
 	}
 
 	http.HandleFunc("/", routes.Home)
@@ -19,6 +20,6 @@ func main() {
 
 	errorListenAndServer := http.ListenAndServe(":8080", nil)
 	if errorListenAndServer != nil {
-		log.Println(errorListenAndServer.Error())
+		slog.Error(errorListenAndServer.Error())
 	}
 }

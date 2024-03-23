@@ -1,3 +1,4 @@
+import Title from '@/components/Title'
 import IconImage from '@/icons/IconImage'
 import React from 'react'
 
@@ -8,11 +9,11 @@ export default function WallpapersLayout({
 }) {
   return (
     <>
-      <section className='flex justify-between items-center'>
-        <h1>Api Free Wallpapers</h1>
-        <IconImage />
+      <section>
+        <Title contentTitle='Api Free Wallpaper' />
       </section>
       <article className='w-full columns-1 sm:columns-2 text-pretty mb-4'>
+        {/* <IconImage /> */}
         <p className='px-2 mb-4 sm:mb-0 sm:border-r-2'>
           <span className='text-app-color font-bold font'>
             Api free wallpapers

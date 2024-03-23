@@ -3,7 +3,7 @@ package utils
 import (
 	"fmt"
 	"io"
-	"log"
+	"log/slog"
 	"net/http"
 	"os"
 )
@@ -25,7 +25,7 @@ func ValidOrigin(key string, h http.Header) bool {
 func GetRequestToImages(urlForRequest string) (*http.Request, error) {
 	request, errRequest := http.NewRequest("GET", urlForRequest, nil)
 	if errRequest != nil {
-		log.Println("Error to create request")
+		slog.Info("Error to create request")
 		return nil, errRequest
 
 	}
@@ -44,7 +44,7 @@ func GetImages() ([]byte, error) {
 	response, errRequest := http.DefaultClient.Do(req)
 	// error si la peticion no se hace de forma correcta
 	if errRequest != nil {
-		log.Println(errRequest)
+		slog.Info(errRequest.Error())
 		return nil, errRequest
 	}
 	defer response.Body.Close()
@@ -53,7 +53,7 @@ func GetImages() ([]byte, error) {
 		images, errBody := io.ReadAll(response.Body)
 		// error si tiene problema para leer el Body de la peticion
 		if errBody != nil {
-			log.Println(errBody)
+			slog.Info(errBody.Error())
 		} else {
 			data = images
 		}

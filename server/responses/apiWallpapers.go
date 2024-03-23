@@ -3,7 +3,7 @@ package responses
 import (
 	"encoding/json"
 	"fmt"
-	"log"
+	"log/slog"
 )
 
 type ResponseAPIImages struct {
@@ -23,7 +23,7 @@ func UnmarshalResponseAPIImages(data []byte) {
 	var r ResponseAPIImages
 	errUnmarshal := json.Unmarshal(data, &r)
 	if errUnmarshal != nil {
-		log.Println("Error Unmarshal", errUnmarshal)
+		slog.Warn(fmt.Sprintf("Error Unmarshal: %v", errUnmarshal.Error()))
 	} else {
 		fmt.Println(r)
 	}

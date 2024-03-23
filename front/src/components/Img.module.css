@@ -1,5 +1,4 @@
 .containerImage {
-  position: relative;
   width: 200px;
   height: 200px;
   filter: drop-shadow(0 0 0.2rem #00acd7);

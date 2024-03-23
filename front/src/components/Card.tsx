@@ -14,7 +14,7 @@ export default function Card({ id, by, image, download, source }: PropsCard) {
       key={id}
       className='h-auto border p-2 min-w-[208px] grid grid-cols-1 gap-4 bg-slate-100'
     >
-      <section className='w-full h-auto py-2 bg-slate-700 text-center font-semibold text-white'>
+      <section className='w-full h-auto py-2 text-center font-semibold text-slate-800'>
         {source}
       </section>
       <Img alt={by} src={image} />

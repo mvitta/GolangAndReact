@@ -13,9 +13,9 @@ export default async function Paragraph() {
     })
     const p: ResponseApiGolang = await res.json()
     const [paragraph, specialNote] = formatGolangParagraph(p.paragraph)
+
     //delay
     await new Promise((resolve) => setTimeout(resolve, 1000))
-
     return (
       <>
         <h2 className='text-slate-600 mb-6 text-balance text-center font-bold text-xl'>
