@@ -19,7 +19,7 @@ const config: Config = {
         'app-color': '#00acd7',
       },
       listStyleImage: {
-        mark: 'url("/icons/check.png")',
+        checkmark: 'url("../images/check.svg")',
       },
     },
   },

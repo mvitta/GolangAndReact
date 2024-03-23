@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface PropsSVG extends React.SVGProps<SVGSVGElement> {
   w: string
   h: string

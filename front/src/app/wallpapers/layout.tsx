@@ -8,7 +8,7 @@ export default function WallpapersLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
+    <section className='mx-8'>
       <section>
         <Title contentTitle='Api Free Wallpaper' />
       </section>
@@ -41,6 +41,6 @@ export default function WallpapersLayout({
       </p>
       <hr />
       {children}
-    </>
+    </section>
   )
 }
