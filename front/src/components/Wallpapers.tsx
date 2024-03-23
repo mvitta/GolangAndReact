@@ -30,7 +30,7 @@ export default async function Wallpapers() {
         {/* <ImagesLoading /> */}
         {images.results.length > 0 ? (
           //los estilos de la grilla son manejados con css modules
-          <div className={`${styles.containerGrid} mx-auto my-4`}>
+          <div className={`${styles.containerGrid} my-4`}>
             {images.results.map((img) => {
               const { by, image, id, source, download } = img
               return (
