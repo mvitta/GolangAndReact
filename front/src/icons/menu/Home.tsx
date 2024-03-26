@@ -1,4 +1,4 @@
-type IconProps = React.SVGProps<SVGSVGElement>
+import { type IconProps } from '@/types.d.ts/definitions'
 
 export default function Home(props: IconProps) {
   return (

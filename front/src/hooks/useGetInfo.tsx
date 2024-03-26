@@ -19,7 +19,7 @@ export default async function useGetInfo(): Promise<string[]> {
       .then((data: ResponseApiGolang) => {
         setState(data.paragraph)
       })
-      .catch((error) => console.log(error))
+      .catch((error) => console.error(error))
   }, [])
 
   return [state]

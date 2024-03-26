@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import IconHome from '@/icons/menu/Home'
 import IconWallpapers from '@/icons/menu/Wallpapers'
+import IconForm from '@/icons/menu/IconForm'
 import styles from '@/components/Menu.module.css'
-import { useEffect } from 'react'
+import { type IconProps, MenuOptions } from '@/types.d.ts/definitions'
 
 export default function Menu() {
   const pathname = usePathname()
 
-  const menuOptions = [
+  const options: MenuOptions[] = [
     {
       href: '/',
       text: 'Inicio',
@@ -21,13 +22,18 @@ export default function Menu() {
       text: 'Wallpapers',
       icon: IconWallpapers,
     },
+    {
+      href: '/form',
+      text: 'Formularios',
+      icon: IconForm,
+    },
   ]
 
   return (
     <section className='relative border-none bg-slate-700 min-h-1/2 py-1 z-10'>
       <nav className='font-bold text-white text-lg'>
         <ul className='flex flex-wrap justify-center justify-items-center gap-4'>
-          {menuOptions.map((item, index) => {
+          {options.map((item, index) => {
             const { icon, href, text } = item
             const Icon = icon
             return (

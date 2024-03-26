@@ -52,6 +52,7 @@ export default async function Wallpapers() {
       </>
     )
   } catch (error) {
+    console.error(error)
     return <ConnectionError />
   }
 }

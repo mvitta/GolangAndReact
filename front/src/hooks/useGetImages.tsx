@@ -20,6 +20,6 @@ export default async function useGetImages() {
     const data: ResponseAPIImages = await response.json()
     return data
   } catch (error) {
-    console.log('Error: ', error)
+    console.error('Error: ', error)
   }
 }

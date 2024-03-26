@@ -1,6 +1,6 @@
-type PropsIcons = React.SVGProps<SVGSVGElement>
+import { type IconProps } from '@/types.d.ts/definitions'
 
-export default function Wallpapers(props: PropsIcons) {
+export default function Wallpapers(props: IconProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
