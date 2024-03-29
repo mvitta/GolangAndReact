@@ -5,11 +5,7 @@ export interface MenuOptions {
   text: string
   icon: (props: IconProps) => JSX.Element
 }
-export interface InputFields {
-  id: number
+export interface InputFields
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
-  placeholder?: string
-  name: string
-  type: React.HTMLInputTypeAttribute
-  autoCapitalize?: boolean
 }

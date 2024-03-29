@@ -49,7 +49,7 @@ p {
   }
 }
 
-section div span::after {
+section div .section-left-header::after {
   display: block;
   content: '';
   border-bottom: solid 3px #019fb6;

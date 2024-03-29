@@ -5,15 +5,15 @@ export default function RadioButton() {
         Seleccionar Sexo
       </legend>
       <div>
-        <span className='text-app-color font-bold '>Masculino</span>
-        <label>
-          <input type='radio' name='sex' id='male' />
+        <label className='inline-block'>
+          <span className='text-app-color font-bold '>Masculino</span>
+          <input type='radio' name='sex' id='male' className='mx-4' />
         </label>
       </div>
       <div>
-        <span className='text-app-color font-bold '>Femenino</span>
-        <label>
-          <input type='radio' name='sex' id='female' />
+        <label className='inline-block'>
+          <span className='text-app-color font-bold '>Femenino</span>
+          <input type='radio' name='sex' id='female' className='mx-4' />
         </label>
       </div>
     </fieldset>
