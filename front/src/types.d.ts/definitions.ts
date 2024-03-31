@@ -8,4 +8,5 @@ export interface MenuOptions {
 export interface InputFields
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
+  idKey?: number
 }

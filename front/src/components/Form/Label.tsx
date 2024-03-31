@@ -7,7 +7,10 @@ export interface PropsLabel
 export default function Label({ label, children, ...props }: PropsLabel) {
   return (
     <label className='inline-block mb-3' {...props}>
-      <div className='mb-3 text-app-color font-bold uppercase'>{label}</div>
+      <div className='mb-3 text-app-color font-bold uppercase'>
+        {label} <span className='text-red-500 font-bold'>*</span>
+      </div>
+
       {children}
     </label>
   )
